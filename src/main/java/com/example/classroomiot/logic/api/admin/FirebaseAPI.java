@@ -1,13 +1,15 @@
 package com.example.classroomiot.logic.api.admin;
 
+import com.example.classroomiot.logic.service.FireBaseService;
 import com.example.classroomiot.logic.utils.response.ResponseEntityBuilder;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.google.firebase.database.DataSnapshot;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
@@ -17,13 +19,11 @@ import java.util.Map;
 public class FirebaseAPI {
 
     @Autowired
-    private FirebaseDatabase firebaseDatabase;
+    private FireBaseService fireBaseService;
 
     @PostMapping("/api/execute-firebase")
-    public ResponseEntity<?> demoFireBase(@RequestBody Map<String, String> model) {
-        DatabaseReference startAt = firebaseDatabase.getReference("rooms/room1/device1/startAt");
-        startAt.setValueAsync("13/03/2022 08:00:00");
-        log.info("success");
+    public ResponseEntity<?> demoFireBase(@RequestParam Map<String, String> model) {
+        fireBaseService.putFireBase(model);
         return ResponseEntityBuilder.getBuilder()
                 .setMessage("SUCCESS")
                 .build();
