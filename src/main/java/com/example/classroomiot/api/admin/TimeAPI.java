@@ -1,4 +1,4 @@
-package com.example.classroomiot.logic.api.admin;
+package com.example.classroomiot.api.admin;
 
 import com.example.classroomiot.constants.AppConstant;
 import com.example.classroomiot.logic.dto.TimeDTO;
@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Date;
 
 @RestController
 @RequestMapping("/api/admin/device")

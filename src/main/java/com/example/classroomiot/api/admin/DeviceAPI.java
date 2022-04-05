@@ -1,4 +1,4 @@
-package com.example.classroomiot.logic.api.admin;
+package com.example.classroomiot.api.admin;
 
 import com.example.classroomiot.constants.AppConstant;
 import com.example.classroomiot.logic.dto.DeviceDTO;
