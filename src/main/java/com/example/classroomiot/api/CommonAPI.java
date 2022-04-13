@@ -2,6 +2,7 @@ package com.example.classroomiot.api;
 
 import com.example.classroomiot.constants.AppConstant;
 import com.example.classroomiot.logic.dto.UserDTO;
+import com.example.classroomiot.logic.dto.custom.UserDTOCustom;
 import com.example.classroomiot.logic.service.DeviceService;
 import com.example.classroomiot.logic.service.UserService;
 import com.example.classroomiot.logic.utils.response.ResponseEntityBuilder;
@@ -10,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/public/api/")
+@RequestMapping("/public/api")
 public class CommonAPI {
 
     private final UserService userService;
